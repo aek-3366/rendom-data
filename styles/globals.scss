@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(110, 218, 120);
+  background: linear-gradient(90deg,
+      rgba(110, 218, 120, 1) 39%,
+      rgba(255, 162, 0, 1) 87%);
+  overflow-x: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.background-layout {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #6eda78, #ffa200)
+}
+
+.shape-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.btn-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+/* .btn-container:hover {
+  background-color: #FF9933;
+} */
+
+.shape {
+  width: 100px;
+  height: 100px;
+  /* border: 2px solid #000; */
+}
+
+.circle {
+  border-radius: 50%;
+  background: #555;
+
+}
+
+.square {
+  border-radius: 0%;
+  background: #555;
+
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 87px solid #555;
+  /* background: #555; */
+
+
+}
+
+.oval {
+  height: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background: #555;
+
+
+}
+
+.trapezoid {
+  border-bottom: 50px solid #555;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 125px;
+  background: #555;
+
+}
+
+.parallelogram {
+  width: 100px;
+  height: 50px;
+  transform: skew(20deg);
+  background: #555;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-right: 50px solid #555;
+  border-bottom: 25px solid transparent;
+}
+
+
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #555;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid #555;
+}
+
+
+
+
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid #555;
+  border-bottom: 25px solid transparent;
+}
+
+
+.movedata {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 23rem;
+  margin-right: 23rem;
+
+}
+
+.movedata1 {
+  position: absolute;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 40px;
+  padding: 10px;
+  top: 19rem;
+}
+
+.movedata2 {
+  position: absolute;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 40px;
+  padding: 10px;
+  margin-left: 18rem;
+  top: 19rem;
+
+}
+
+.movedata3 {
+  position: absolute;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 40px;
+  padding: 10px;
+  margin-left: 38rem;
+  top: 19rem;
+
+}
