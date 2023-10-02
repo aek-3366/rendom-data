@@ -17,10 +17,9 @@ export default function ShapeButton({ }: Props) {
   const buttonShapes = [
     "triangle-left",
     "triangle-up",
-    // "triangle-down",
+    "triangle-down",
     "triangle-right",
   ];
-
 
   const handlelanguage = (value: string) => {
     i18n.changeLanguage(value);
@@ -53,7 +52,7 @@ export default function ShapeButton({ }: Props) {
   return (
     <div>
 
-      <div className="">
+      <div className="w-full h-full">
         <Button className={stype.buttonbg} onClick={() => router.back()}>back menu</Button>
         <h1 className="">{t("stypes")}</h1>
 
@@ -74,40 +73,60 @@ export default function ShapeButton({ }: Props) {
 
 
       <div className="background-layout">
-        <Row justify={"center"} style={{
-          marginLeft: "16rem"
+
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "20px",
+          cursor: "pointer",
+          position: "relative",
+          // gap: "20px",
+
+
         }}>
-          <div className="btn-container">
-            {buttonShapes.map((btn, index) => (
-              <div
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  padding: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxSizing: "border-box",
-                  width: "300px",
-                  height: "200px",
-                }}
-                onClick={generateRandomShapes}
-                key={index}
-              >
-                <div className={`shape ${btn}`}></div>
+          {buttonShapes.map((btn, index) => (
 
-                {index === 1 && <Row>
-                  <h1 className="triangle-down"></h1>
-                </Row>}
-              </div>
+            <div
+              style={{
+                position: "relative",
+                backgroundColor: "#FFFFFF",
+                padding: "20px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxSizing: "border-box",
+                width: "300px",
+                height: "200px",
+                marginRight: index < buttonShapes.length - 1 ? (btn === "triangle-left" || btn === "triangle-down" ? "10px" : "0") : "0",
+                // marginLeft: index < buttonShapes.length - 1 ? (btn === "triangle-down" ? "10px" : "0") : "0",
 
-            ))}
-          </div>
-        </Row>
-        <div className="movedata">
+              }}
+              onClick={generateRandomShapes}
+              key={index}
+            >
+              <div className={`shape ${btn}`}></div>
+
+
+              {index !== 1 ? (
+                <div className="movedata1" style={{ position: "absolute", left: index === 2 ? "-4rem" : null }}>
+                  {t("movevalue")}
+                </div>
+              ) : null}
+              {/* {index === 1 && (
+                <div className="movedata1" style={{ position: "absolute", left: "20px" }}>
+                  {t("movevalue")}
+                </div>
+              )} */}
+            </div>
+
+          ))}
+        </div>
+        {/* <div className="movedata">
           <div className="movedata1">{t("movevalue")}</div>
           <div className="movedata2">{t("move_position")}</div>
           <div className="movedata3">{t("movevalue")}</div>
-        </div>
+        </div> */}
 
 
         <div className="shape-container">
